@@ -27,7 +27,7 @@ int main() {
      contador = 1,
      movimento;
 
-     /*printf("\nDigite quantas casas o bispo irá avançar: ");
+     printf("\nDigite quantas casas o bispo irá avançar: ");
      scanf("%d", &bispo);
 
      printf("\n------------------------------------------------------------------");
@@ -63,15 +63,20 @@ int main() {
      do {
          printf("\nRainha avançando para a esquerda %d casas", contador);
          contador++;
-     } while (contador <= rainha);*/
+     } while (contador <= rainha);
 
     // Nível Aventureiro - Movimentação do Cavalo
     /* Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
      Um loop pode representar a movimentação horizontal e outro vertical.*/
 
-    printf("\nDigite quantas casas o cavalo irá avançar (lembrando que ele se movimenta em 'L'): ");
+    contador = 1; //voltando o contador a numeracao inicial (caso contrario ele terá o valor adicionado nos movimentos da rainha);
+
+    //movimentacao do cavalo
+    printf("\n\nDigite quantas casas o cavalo irá avançar (lembrando que ele se movimenta em 'L'): ");
     scanf("%d", &cavalo);
 
+    //ira validar se deve se movimentar para a esquerda ou direita.
+    //caso opcao invalida a pergunta voltara
     do{
         printf("\nO cavalo irá se movimentar para:\n1. Direita\n2. Esquerda ");
         scanf("%d", &movimento);
@@ -82,6 +87,7 @@ int main() {
         
     } while (movimento != 1 && movimento !=2);
      
+    //ira imprimir a movimentacao
      for (int i = 1; i <= cavalo; i++){
         
         while (contador <= cavalo){
