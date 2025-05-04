@@ -20,12 +20,14 @@ int main() {
      int
      bispo,
      torre,
-     rainha;
+     rainha,
+     cavalo;
 
      int
-     contador = 1;
+     contador = 1,
+     movimento;
 
-     printf("\nDigite quantas casas o bispo irá avançar: ");
+     /*printf("\nDigite quantas casas o bispo irá avançar: ");
      scanf("%d", &bispo);
 
      printf("\n------------------------------------------------------------------");
@@ -61,11 +63,38 @@ int main() {
      do {
          printf("\nRainha avançando para a esquerda %d casas", contador);
          contador++;
-     } while (contador <= rainha);
+     } while (contador <= rainha);*/
 
     // Nível Aventureiro - Movimentação do Cavalo
     /* Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
      Um loop pode representar a movimentação horizontal e outro vertical.*/
+
+    printf("\nDigite quantas casas o cavalo irá avançar (lembrando que ele se movimenta em 'L'): ");
+    scanf("%d", &cavalo);
+
+    do{
+        printf("\nO cavalo irá se movimentar para:\n1. Direita\n2. Esquerda ");
+        scanf("%d", &movimento);
+        
+        if (movimento != 1 && movimento !=2){
+            printf("\nOpção inválida!\n");
+        }
+        
+    } while (movimento != 1 && movimento !=2);
+     
+     for (int i = 1; i <= cavalo; i++){
+        
+        while (contador <= cavalo){
+            printf(contador <= 1 ? "\nCavalo avançou %d casa para cima" : "\nCavalo avançou %d casas para cima", contador);
+             
+            contador++;
+        }
+
+        if (i == cavalo){
+            printf(movimento == 1 ? "\nAvançou 1 casa para a direita" : "\nAvançou 1 casa para a esquerda");
+        }
+        
+    }
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     /* Sugestão: Substitua as movimentações das peças por funções recursivas.
