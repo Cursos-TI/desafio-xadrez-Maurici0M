@@ -202,7 +202,6 @@ int main() {
                  if (j <= 1){
                      printf("\nCavalo avançando 1 casa para %s\n\n", nomeDirecao(direcao));
                  } 
-
              }
              
          break;
